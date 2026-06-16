@@ -1,0 +1,19 @@
+{
+  "name": "手帳",
+  "short_name": "手帳",
+  "description": "縦タイムライン型カレンダーの個人手帳アプリ",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAF9F6",
+  "theme_color": "#6C5CE7",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

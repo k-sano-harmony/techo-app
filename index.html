@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>手帳</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#6C5CE7" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="手帳" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- ヘッダー -->
+    <header id="header">
+      <input type="text" id="search-input" placeholder="検索..." autocomplete="off" />
+      <button id="today-btn">今日</button>
+    </header>
+
+    <!-- タイムライン -->
+    <main id="timeline">
+      <div id="top-sentinel" class="sentinel"></div>
+      <div id="timeline-content"></div>
+      <div id="bottom-sentinel" class="sentinel"></div>
+    </main>
+
+    <!-- 検索結果ビュー -->
+    <section id="search-view"></section>
+
+    <!-- オーバーレイ -->
+    <div id="overlay"></div>
+
+    <!-- 日詳細シート -->
+    <section id="day-detail" class="sheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-header">
+        <span class="sheet-title" id="day-detail-title"></span>
+        <button class="sheet-close" id="day-detail-close" aria-label="閉じる">&times;</button>
+      </div>
+      <div class="sheet-body" id="day-detail-body"></div>
+    </section>
+
+    <!-- 編集フォームシート -->
+    <section id="edit-form" class="sheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-header">
+        <span class="sheet-title" id="edit-form-title">記録を追加</span>
+        <button class="sheet-close" id="edit-form-close" aria-label="閉じる">&times;</button>
+      </div>
+      <div class="sheet-body">
+        <div class="form-group">
+          <label class="form-label">チャンネル</label>
+          <div class="channel-chips" id="channel-chips">
+            <button type="button" class="channel-chip ga4" data-channel="ga4">GA4</button>
+            <button type="button" class="channel-chip meta" data-channel="meta">Meta</button>
+            <button type="button" class="channel-chip memo" data-channel="memo">メモ</button>
+            <button type="button" class="channel-chip plan" data-channel="plan">予定</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">日付</label>
+          <input type="date" id="form-date" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">時刻（任意）</label>
+          <input type="time" id="form-time" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">内容</label>
+          <textarea id="form-text" class="form-textarea" placeholder="内容を入力..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="button" id="form-cancel">キャンセル</button>
+          <button type="button" id="form-save" class="primary">保存</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- トースト -->
+    <div id="toast"></div>
+  </div>
+
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
