@@ -1,6 +1,6 @@
 // ===== GAS Web App 接続設定 =====
 // GASをデプロイした際の「ウェブアプリのURL」をここに設定してください
-const GAS_URL = 'https://script.google.com/macros/s/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/exec'
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbz9By_v2dXvBRamwhpEf93L7I8cywE1UL2iPCbmJj8MXaDGIsloEJcIaMFbkEK5IG5QUw/exec'
 
 async function apiGet(params) {
   const url = new URL(GAS_URL)
