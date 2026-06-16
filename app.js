@@ -413,7 +413,7 @@ async function saveRecord() {
       removeRecordFromState(tempId, date)
       refreshDayRow(date)
       if (state.currentDateStr === date) renderDayDetail(date)
-      showToast('保存に失敗しました')
+      showToast('保存に失敗: ' + e.message)
     }
   } else {
     const oldDate = state.editingRecord.date
